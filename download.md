@@ -1,3 +1,6 @@
+---
+layout: page
+---
 Here you can download SUPER for Windows and Linux.
 
 ## Download for Windows

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "SUPER Android Analyzer is here!"
-date:   2016-10-01 12:00:00 +0000
+date:   2016-10-02 12:00:00 +0000
 categories: super release 0.1.0
 ---
 SUPER Android Analyzer is here. SUPER, the Secure, Unified, Powerful and Extensible Rust Android
