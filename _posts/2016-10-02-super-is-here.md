@@ -4,6 +4,8 @@ title:  "SUPER Android Analyzer is here!"
 date:   2016-10-02 12:00:00 +0000
 categories: super release 0.1.0
 ---
+<img src="{{ site.url }}/assets/logo.png" alt="SUPER logo" title="SUPER Android Analyzer" style="float:left;width:15em;margin:1em">
+
 SUPER Android Analyzer is here. SUPER, the Secure, Unified, Powerful and Extensible Rust Android
 Analyzer version 0.1.0 has been released, and with it, all the power of it is now on your hands.
 
