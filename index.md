@@ -15,7 +15,7 @@ too, and of course, the downloads. SUPER is a command-line application that can 
 MacOS X and Linux, that analyzes *.apk* files in search for vulnerabilities. It does this by
 decompressing APKs and applying a series of rules to detect those vulnerabilities.
 
-## Latest posts
+## Latest news
 
 <ul class="posts">
   {% for post in site.posts %}
