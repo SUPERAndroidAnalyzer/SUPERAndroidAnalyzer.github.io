@@ -278,3 +278,21 @@ The applications analyzed have been these:
    - vente-privee (com.venteprivee)
    - Wish - Shopping made fun (com.contextlogic.wish)
    - Zalando - Shopping fashion (de.zalando.mobile)
+ - 15 of the 20 most downloaded apps ('Pokeradar' category):
+   - Map for Poke Radar (com.poke.radar.pokemon.go.maps-4)
+   - GO Map - Para Pokemon GO (com.go.map-10)
+   - GO Tools for Pokemon GO (com.aumentia.pokefind-28)
+   - Live Map - for Pokemon GO (xyz.devmasters.pokemaster-16)
+   - GO Track - For Pokemon GO (CS) (com.pokedev.poketrack-1475011804)
+   - Radar for Pokemon GO (com.poke.radarriver-5)
+   - Map for Pokemon GO (us.pokemap.find.pokemons.free2-4)
+   - GO Map - For Pokemon (com.geoapps.gomap-44)
+   - GO Utilidades de Pokemon GO (com.pokecrew.pokecrewmap-14)
+   - Go Map for Pokemon GO (com.gomapforpokemongo-4)
+   - GO Locator for Pokemon GO (com.map.pokemon.exchange.pokeexchange-3)
+   - Monster Radar (ru.niceappsandgames.pokeradar-3)
+   - Map Radar For Pkmn Go (com.mapradarforpkmn-1.apk)
+   - Guide Pokemon GO Tips Tricks (com.bestgameguideandwalkthrough.pokemongo-2)
+   - Guide Poke Vision Radar GO Map (guide.poke.radar-1)
+
+
