@@ -1,5 +1,5 @@
 <article>
-  <h1>{{ post.title }}<br><small><time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></small></h1>
+  <h1>{{ page.title }}<br><small><time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></small></h1>
   {{ content }}
 </article>
 
