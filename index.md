@@ -1,7 +1,6 @@
 ---
 layout: page
 title: SUPER Android Analyzer
-tagline: Secure, Unified, Powerful and Extensible Rust Android Analyzer
 ---
 {% include JB/setup %}
 

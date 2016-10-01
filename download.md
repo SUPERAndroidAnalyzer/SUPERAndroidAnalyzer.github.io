@@ -1,5 +1,6 @@
 ---
 layout: page
+title: SUPER Android Analyzer - Download
 ---
 Here you can download SUPER for Windows and Linux.
 
