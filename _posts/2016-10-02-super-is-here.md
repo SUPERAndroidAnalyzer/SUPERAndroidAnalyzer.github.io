@@ -22,14 +22,14 @@ working in Android analysis, and don't put that kind of functionality first.
 Our approach solves those issues in different ways: We first decided to use **Rust** as our
 programming language. The language developed openly by Mozilla Foundation gives us lots of
 utilities to work with regular expressions, files etc. and, most importantly, it enables us to
-create a secure software that does not depend in JVM or JIT compilers. With Rust, stack overflows,
-segmentation faults etc. are directly not possible, which makes sense in a security centered
-application. And it also gives us enough power to do efficient analysis, giving us the option to
-automate it in high volume. This is given by Rust zero-cost abstractions, that gives us an
+create a secure software that does not depend in *JVM* or *JIT* compilers. With Rust, stack
+overflows, segmentation faults etc. are directly not possible, which makes sense in a security
+centered application. And it also gives us enough power to do efficient analysis, giving us the
+option to automate it in high volume. This is given by Rust zero-cost abstractions, that gives us an
 efficiency only comparable to C/C++.
 
 And secondly, we decided to make the software 100% extensible: All rules are centered in a
-*rules.json* file, and each company or tester could create its own rules to analyze what they need.
+`rules.json` file, and each company or tester could create its own rules to analyze what they need.
 It's also modular, so that new developments can easily add new functionality. Finally, a templating
 system for results reports (that will be improved in future updates) gives users the ability to
 personalize the report.
@@ -43,9 +43,28 @@ through the generated code with syntax highlighting for even better vulnerabilit
 
 ## Installation
 
-There are multiple ways of installing SUPER in your computer. SUPER is available in
-*[crates.io](https://crates.io/)*, so if you are using Rust/Cargo it's as simple as running
-`cargo install super`. If not, you can select one of the following options:
+There are multiple ways of installing SUPER in your computer. SUPER is really portable, and it's
+possible to run under Windows, Linux and MacOS X:
+
+### Windows
+
+We have created a package for Windows 64 bits and can be downloaded below. If you want to run SUPER
+in 32-bit Windows, you will need to [compile it from source]({{ page.url }}#compiling-from-source).
+
+We currently depend on OpenSSL and Java, which are not installed in Windows by default. That's why
+Windows users need to download and install OpenSSL and Java and add it to the `PATH` variable of
+the system:
+
+  - You can download OpenSSL [here](http://gnuwin32.sourceforge.net/packages/openssl.htm).
+  - To add it to the PATH, go to *Control panel > System > Environment variables > PATH* and add
+    an entry to OpenSSL (it should be something like this: `C:\Program Files (x86)\GnuWin32\bin`).
+  - Do the same for Java, which can be downloaded [here](http://www.java.com/en/download/).
+
+It's very easy to run SUPER in Windows. We provide an executable which extracts SUPER to the
+specified folder so users don't need to configure anything else. To run SUPER, double click in the
+`.exe` file that you just downloaded. Select the extraction folder, and once extracted, start a
+console in that folder. You can run the program with the `super` command. For more information on
+usage, check the [usage section]({{ page.url }}#usage) of the post.
 
 ### Linux
 
@@ -60,16 +79,6 @@ package), you can compile it from source, as it's shown in the last section of t
  - [CentOS 7](https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.1.0/super-0.1.0-1.el7.centos.x86_64.rpm) (RPM)
  - [Fedora 24](https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.1.0/super-0.1.0-1.fc24.x86_64.rpm) (RPM)
 
-### Windows
-
-SUPER has been developed in UNIX, but it has been programmed so it is easily portable for other SOs. It is currently possible to run SUPER under Windows 64 bits. It is not possible to run SUPER under Windows 32 bits.
-
-We currently have an OpenSSL dependency, which isn't preinstalled in Windows, so for now it is mandatory for windows users to install OpenSSL and add the **bin** folder to the PATH.
-- You can download OpenSSL [here](http://gnuwin32.sourceforge.net/packages/openssl.htm).
-- To add it to the PATH, go to **Control panel - System - Environment variables - PATH** and add an entry to OpenSSL (it should be something like this: **C:\Program Files (x86)\GnuWin32\bin**).
-
-It is very easy to run SUPER in Windows. We provide an executable which extracts SUPER to the especified folder so users don't need to configure anything additional. To run SUPER, once extracted the folder switch to switch to it with a command console and simply run the program. For usage options, go to the section Command Line Interface.
-
 ### MacOS X
 
 For now, MacOS users will need to build the package from source. We already have an issue
@@ -81,7 +90,8 @@ and should be solved by SUPER 0.2.0.
 In the case that you want or need to compile SUPER from its sources, you will need to download
 those sources first. You can download SUPER 0.1.0 sources in
 [zip](https://github.com/SUPERAndroidAnalyzer/super/archive/0.1.0.zip) or in
-[tar.gz](https://github.com/SUPERAndroidAnalyzer/super/archive/0.1.0.tar.gz). You can also clone the *Git* repository by running:
+[tar.gz](https://github.com/SUPERAndroidAnalyzer/super/archive/0.1.0.tar.gz). You can also clone
+the *Git* repository by running:
 
 ```
 git clone https://github.com/SUPERAndroidAnalyzer/super.git
@@ -221,7 +231,7 @@ and to select those to fix or implement. So, for example, we have a list of
 
 ## Our results
 
-For this first version we analyzed a total of 46 applications in the Google Play Store, in
+For this first version we analyzed a total of 61 applications in the Google Play Store, in
 different categories. The complete list is shown here. An online report repository is going to be
 created in the future to show all the generated reports for many applications and versions, but for
 now, a post will be shown in the next days with information about the vulnerabilities that were
@@ -294,5 +304,3 @@ The applications analyzed have been these:
    - Map Radar For Pkmn Go (com.mapradarforpkmn-1.apk)
    - Guide Pokemon GO Tips Tricks (com.bestgameguideandwalkthrough.pokemongo-2)
    - Guide Poke Vision Radar GO Map (guide.poke.radar-1)
-
-
