@@ -52,4 +52,4 @@ installed, compiling SUPER is as simple as running the following:
 cargo build --release
 ```
 
-This will create `target/release/super`, which will be the executable that you will be able to [use]({{ site.url }}#usage).
+This will create `target/release/super`, which will be the executable that you will be able to [use]({{ BASE_PATH }}#usage).
