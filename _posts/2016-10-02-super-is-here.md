@@ -21,14 +21,14 @@ it's not enough. All of them have two main issues we wanted to fix: They are wri
 Python and they are not easily extensible. They are not meant to be used by businesses directly
 working in Android analysis, and don't put that kind of functionality first.
 
-Our approach solves those issues in different ways: We first decided to use **Rust** as our
-programming language. The language developed openly by Mozilla Foundation gives us lots of
-utilities to work with regular expressions, files etc. and, most importantly, it enables us to
-create a secure software that does not depend in *JVM* or *JIT* compilers. With Rust, stack
-overflows, segmentation faults etc. are directly not possible, which makes sense in a security
-centered application. And it also gives us enough power to do efficient analysis, giving us the
-option to automate it in high volume. This is given by Rust zero-cost abstractions, that gives us an
-efficiency only comparable to C/C++.
+Our approach solves those issues in different ways: We first decided to use
+**[Rust](https://www.rust-lang.org/)** as our programming language. The language developed openly
+by Mozilla Foundation gives us lots of utilities to work with regular expressions, files etc. and,
+most importantly, it enables us to create a secure software that does not depend in *JVM* or *JIT*
+compilers. With Rust, stack overflows, segmentation faults etc. are directly not possible, which
+makes sense in a security centered application. And it also gives us enough power to do efficient
+analysis, giving us the option to automate it in high volume. This is given by Rust zero-cost
+abstractions, that gives us an efficiency only comparable to C/C++.
 
 And secondly, we decided to make the software 100% extensible: All rules are centered in a
 `rules.json` file, and each company or tester could create its own rules to analyze what they need.
