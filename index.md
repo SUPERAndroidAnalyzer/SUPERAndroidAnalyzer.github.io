@@ -6,7 +6,7 @@ title: SUPER Android Analyzer
 
 <img src="{{ site.url }}/assets/logo.png" alt="SUPER logo" title="SUPER Android Analyzer" style="float:left;width:15em;margin:1em">
 
-## Secure, Unified, Powerful and Extensible Rust Android Analyzer
+*Secure, Unified, Powerful and Extensible Rust Android Analyzer*
 
 **Welcome to SUPER!** Here you can find all the information relevant to the SUPER Android Analyzer.
 You can find news too, and of course, the downloads. SUPER is a command-line application that can
