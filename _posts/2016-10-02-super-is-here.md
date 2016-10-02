@@ -69,6 +69,8 @@ specified folder so users don't need to configure anything else. To run SUPER, d
 console in that folder. You can run the program with the `super` command. For more information on
 usage, check the [usage section]({{ page.url }}#usage) of the post.
 
+- [Download SUPER](https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.1.0/super-0.1.0-windows-x86_64.exe) for Windows 8.1+ 64-bit
+
 ### Linux
 
 We have made it really easy to install SUPER in Linux. We have many packages for different
