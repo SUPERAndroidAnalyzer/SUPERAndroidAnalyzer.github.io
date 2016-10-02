@@ -220,7 +220,8 @@ source software. It's licenses under GPLv3 (or, at your option, any later versio
 [Git-flow](http://nvie.com/posts/a-successful-git-branching-model/) as our development model and we
 have created some
 [guidelines](https://github.com/SUPERAndroidAnalyzer/super/blob/master/contributing.md) to
-contribute. It has been developed by the [SUPER team]({{ site.url }}/about/#team).
+contribute. It has been developed by the
+[SUPER team](https://github.com/orgs/SUPERAndroidAnalyzer/people).
 
 ### Things to do
 
