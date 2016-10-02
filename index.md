@@ -62,8 +62,6 @@ You can learn about more specific use cases by running:
 super --help
 ```
 
-<div style="margin-top:2em"></div>
-
 ## Latest news
 
 <ul class="posts">
