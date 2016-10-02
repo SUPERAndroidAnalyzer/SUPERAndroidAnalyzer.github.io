@@ -1,0 +1,15 @@
+<article id="post">
+  <h1>{{ page.title }}<br><small><time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></small></h1>
+  {{ content }}
+</article>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    {% for post in site.related_posts limit:3 %}
+      <li><time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date_to_string }}</time> » <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% include JB/comments %}

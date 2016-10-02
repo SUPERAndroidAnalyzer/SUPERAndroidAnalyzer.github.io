@@ -1,11 +1,14 @@
 ---
 layout: post
 title:  "SUPER Android Analyzer is here!"
-date:   2016-10-01 12:00:00 +0000
+date:   2016-10-02 12:00:00 +0000
 categories: super release 0.1.0
 ---
+
 SUPER Android Analyzer is here. SUPER, the Secure, Unified, Powerful and Extensible Rust Android
 Analyzer version 0.1.0 has been released, and with it, all the power of it is now on your hands.
+
+<img src="{{ site.url }}/assets/logo.png" alt="SUPER logo" title="SUPER Android Analyzer" style="float:left;width:15em;margin:1em">
 
 But first, let's talk about SUPER. **What is SUPER?** SUPER is a command-line application that can
 be used in Windows, MacOS X and Linux, that analyzes *.apk* files in search for vulnerabilities.
@@ -14,22 +17,22 @@ We currently detect SQL Injections, XSS vulnerabilities, *superuser* checks, and
 vulnerabilities detected by a total of 37 rules, that will be expanded and optimized in future
 updates.
 
-But, why create a new analyzer? Is it not enough with *MobSF*, *QARC*, *Androbugs*…? Well, we think
+But, why create a new analyzer? Is it not enough with *MobSF*, *Qark*, *Androbugs*…? Well, we think
 it's not enough. All of them have two main issues we wanted to fix: They are written in Java or
 Python and they are not easily extensible. They are not meant to be used by businesses directly
 working in Android analysis, and don't put that kind of functionality first.
 
-Our approach solves those issues in different ways: We first decided to use **Rust** as our
-programming language. The language developed openly by Mozilla Foundation gives us lots of
-utilities to work with regular expressions, files etc. and, most importantly, it enables us to
-create a secure software that does not depend in JVM or JIT compilers. With Rust, stack overflows,
-segmentation faults etc. are directly not possible, which makes sense in a security centered
-application. And it also gives us enough power to do efficient analysis, giving us the option to
-automate it in high volume. This is given by Rust zero-cost abstractions, that gives us an
-efficiency only comparable to C/C++.
+Our approach solves those issues in different ways: We first decided to use
+**[Rust](https://www.rust-lang.org/)** as our programming language. The language developed openly
+by Mozilla Foundation gives us lots of utilities to work with regular expressions, files etc. and,
+most importantly, it enables us to create a secure software that does not depend in *JVM* or *JIT*
+compilers. With Rust, stack overflows, segmentation faults etc. are directly not possible, which
+makes sense in a security centered application. And it also gives us enough power to do efficient
+analysis, giving us the option to automate it in high volume. This is given by Rust zero-cost
+abstractions, that gives us an efficiency only comparable to C/C++.
 
 And secondly, we decided to make the software 100% extensible: All rules are centered in a
-*rules.json* file, and each company or tester could create its own rules to analyze what they need.
+`rules.json` file, and each company or tester could create its own rules to analyze what they need.
 It's also modular, so that new developments can easily add new functionality. Finally, a templating
 system for results reports (that will be improved in future updates) gives users the ability to
 personalize the report.
@@ -43,13 +46,30 @@ through the generated code with syntax highlighting for even better vulnerabilit
 
 ## Installation
 
-There are multiple ways of installing SUPER in your computer. SUPER is available in
-*[crates.io](https://crates.io/)*, so if you are using Rust/Cargo it's as simple as running
-`cargo install super`. If not, you can select one of the following options:
+There are multiple ways of installing SUPER in your computer. SUPER is really portable, and it's
+possible to run under Windows, Linux and MacOS X:
 
 ### Windows
 
-TODO (Bruno)
+We have created a package for Windows 64 bits and can be downloaded below. If you want to run SUPER
+in 32-bit Windows, you will need to [compile it from source]({{ page.url }}#compiling-from-source).
+
+We currently depend on OpenSSL and Java, which are not installed in Windows by default. That's why
+Windows users need to download and install OpenSSL and Java and add it to the `PATH` variable of
+the system:
+
+  - You can download OpenSSL [here](http://gnuwin32.sourceforge.net/packages/openssl.htm).
+  - To add it to the PATH, go to *Control panel > System > Environment variables > PATH* and add
+    an entry to OpenSSL (it should be something like this: `C:\Program Files (x86)\GnuWin32\bin`).
+  - Do the same for Java, which can be downloaded [here](http://www.java.com/en/download/).
+
+It's very easy to run SUPER in Windows. We provide an executable which extracts SUPER to the
+specified folder so users don't need to configure anything else. To run SUPER, double click in the
+`.exe` file that you just downloaded. Select the extraction folder, and once extracted, start a
+console in that folder. You can run the program with the `super` command. For more information on
+usage, check the [usage section]({{ page.url }}#usage) of the post.
+
+- [Download SUPER](https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.1.0/super-0.1.0-windows-x86_64.exe) for Windows 8.1+ 64-bit
 
 ### Linux
 
@@ -59,11 +79,10 @@ package similar to your distribution (CentOS package for RedHat based distributi
 packages for Debian based distributions, etc.) or if you prefer (or don't find an appropriate
 package), you can compile it from source, as it's shown in the last section of the installation.
 
- - [Debian 8.6](https://github.com/SUPERAndroidAnalyzer/super/archive/super-0.1.0-debian.deb) (DEB)
- - [Ubuntu 16.04](https://github.com/SUPERAndroidAnalyzer/super/archive/super-0.1.0-ubuntu.deb) (DEB)
- - [Linux Mint 18](https://github.com/SUPERAndroidAnalyzer/super/archive/super-0.1.0-mint.deb) (DEB)
- - [CentOS 7](https://github.com/SUPERAndroidAnalyzer/super/archive/super-0.1.0-centos.rpm) (RPM)
- - [Fedora 24](https://github.com/SUPERAndroidAnalyzer/super/archive/super-0.1.0-fedora.rpm) (RPM)
+ - [Debian 8.6](https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.1.0/super_0.1.0_debian_amd64.deb) (DEB)
+ - [Ubuntu 16.04](https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.1.0/super_0.1.0_ubuntu_amd64.deb) (DEB)
+ - [CentOS 7](https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.1.0/super-0.1.0-1.el7.centos.x86_64.rpm) (RPM)
+ - [Fedora 24](https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.1.0/super-0.1.0-1.fc24.x86_64.rpm) (RPM)
 
 ### MacOS X
 
@@ -76,7 +95,8 @@ and should be solved by SUPER 0.2.0.
 In the case that you want or need to compile SUPER from its sources, you will need to download
 those sources first. You can download SUPER 0.1.0 sources in
 [zip](https://github.com/SUPERAndroidAnalyzer/super/archive/0.1.0.zip) or in
-[tar.gz](https://github.com/SUPERAndroidAnalyzer/super/archive/0.1.0.tar.gz). You can also clone the *Git* repository by running:
+[tar.gz](https://github.com/SUPERAndroidAnalyzer/super/archive/0.1.0.tar.gz). You can also clone
+the *Git* repository by running:
 
 ```
 git clone https://github.com/SUPERAndroidAnalyzer/super.git
@@ -94,7 +114,7 @@ cargo build --release
 This will create `target/release/super`, which will be the executable that you will be able to use
 in the following steps.
 
-## Use
+## Usage
 
 To use SUPER you will need to configure in the `config.toml` file the paths of `vendor`,
 `downloads` and other folders. If the package was installed using one of the provided packages,
@@ -108,8 +128,9 @@ packages. This should change once [#22](https://github.com/SUPERAndroidAnalyzer/
 implemented.
 
 Once configured, the use is simple: Move the *.apk* file that you want to test to the `downloads`
-folder. The name of the *.apk* file should be `{package_name}.apk`. For example:
-`com.instagram.android.apk`. After that, running SUPER is as easy as running this:
+folder. If the folder does not exist, you will need to create it. The name of the *.apk* file
+should be `{package_name}.apk`. For example: `com.instagram.android.apk`. After that, running SUPER
+is as easy as running this:
 
 ```
 super {package_name}
@@ -195,13 +216,29 @@ one of the priorities for the next version
 ([#22](https://github.com/SUPERAndroidAnalyzer/super/issues/22)), since they use external Java
 dependencies.
 
+## Development
+
+SUPER has been developed in [GitHub](https://github.com/SUPERAndroidAnalyzer/super) as an open
+source software. It's licenses under GPLv3 (or, at your option, any later version). We use
+[Git-flow](http://nvie.com/posts/a-successful-git-branching-model/) as our development model and we
+have created some
+[guidelines](https://github.com/SUPERAndroidAnalyzer/super/blob/master/contributing.md) to
+contribute. It has been developed by the
+[SUPER team](https://github.com/orgs/SUPERAndroidAnalyzer/people).
+
 ### Things to do
 
-TODO, TODO.
+There are still lots of things to do (that's why this version is 0.1.0 and not 1.0.0). You can find
+them in the [issue tracker](https://github.com/SUPERAndroidAnalyzer/super/issues). We have created
+some [labels](https://github.com/SUPERAndroidAnalyzer/super/labels) to make it easier track issues
+and to select those to fix or implement. So, for example, we have a list of
+[easy issues](https://github.com/SUPERAndroidAnalyzer/super/labels/D-Easy), a list of
+[bugs](https://github.com/SUPERAndroidAnalyzer/super/labels/Bug), etc. We even have some issues
+[for newcomers](https://github.com/SUPERAndroidAnalyzer/super/projects/5)!
 
 ## Our results
 
-For this first version we analyzed a total of 76 applications in the Google Play Store, in
+For this first version we analyzed a total of 61 applications in the Google Play Store, in
 different categories. The complete list is shown here. An online report repository is going to be
 created in the future to show all the generated reports for many applications and versions, but for
 now, a post will be shown in the next days with information about the vulnerabilities that were
@@ -226,3 +263,51 @@ The applications analyzed have been these:
    - Rolling Sky (com.turbochilli.rollingsky)
    - DIA (es.dia)
    - Flip Diving (com.motionvolt.flipdiving)
+ - 18 of the 20 most downloaded apps ('Beauty' category):
+   - Beauty tips for skin (net.linktomedia.trucosdebelleza)
+   - BirchBox (com.birchbox.birchbox)
+   - Contourning Step (com.mobincube.contouring_paso_a_paso.sc_3PCIFL)
+   - Cortes de Cabello para mujer (com.cortesdecabello.mujer)
+   - La dieta de la manzana (com.mobincube.la_dieta_de_la_manzana.sc_39YVRJ)
+   - Factor Quema Grasa (com.instagram.android)
+   - Fake Braces (com.krissitop.Fakebraces)
+   - Gold Rose (com.launcher.gold.rose.business)
+   - Cortes de pelo 2016 (com.mobincube.android.sc_33JPWH)
+   - La Dieta Radical (com.mobincube.la_dieta_radical.sc_3X6S6A)
+   - Luxury Brand Stores (com.luxury.nivorboq_pjzbjddw)
+   - Mirror Zoom (com.barilab.handmirror.googlemarket)
+   - Perfect 365 One Tap Makeover(com.arcsoft.perfect365)
+   - Pink Piano (com.launcher.theme.t204067398)
+   - Pink Rose Diamond (com.launcher.theme.pink.rose.diamond)
+   - Snap Doggy Face for Snapchat (com.snapdoggyface.snapphotofilterdoggyface)
+   - Beauty Make Up Photo Editor (app.alert.bueatymackup)
+   - Academy Beauty Club (com.ionicframework.mobile860711)
+ - 12 of the 20 most downloaded shopping apps in Spain:
+   - Bershka (com.inditex.ecommerce.bershka)
+   - chicfy - compra y vende moda (com.chicfy)
+   - coches.net: anuncios de coches (coches.net)
+   - eBay: Buy, sell and save (com.ebay.mobile)
+   - Home - Design & Decor Shopping (com.contextlogic.home)
+   - Lidl - Offers & Leaflets (de.sec.mobile)
+   - Milanuncios (com.muba.anuncios)
+   - Privalia, outlet moda online (com.privalia.privalia)
+   - SheIn (THE YUB) - SheInside. (com.zzkko)
+   - vente-privee (com.venteprivee)
+   - Wish - Shopping made fun (com.contextlogic.wish)
+   - Zalando - Shopping fashion (de.zalando.mobile)
+ - 15 of the 20 most downloaded apps ('Pokeradar' category):
+   - Map for Poke Radar (com.poke.radar.pokemon.go.maps-4)
+   - GO Map - Para Pokemon GO (com.go.map-10)
+   - GO Tools for Pokemon GO (com.aumentia.pokefind-28)
+   - Live Map - for Pokemon GO (xyz.devmasters.pokemaster-16)
+   - GO Track - For Pokemon GO (CS) (com.pokedev.poketrack-1475011804)
+   - Radar for Pokemon GO (com.poke.radarriver-5)
+   - Map for Pokemon GO (us.pokemap.find.pokemons.free2-4)
+   - GO Map - For Pokemon (com.geoapps.gomap-44)
+   - GO Utilidades de Pokemon GO (com.pokecrew.pokecrewmap-14)
+   - Go Map for Pokemon GO (com.gomapforpokemongo-4)
+   - GO Locator for Pokemon GO (com.map.pokemon.exchange.pokeexchange-3)
+   - Monster Radar (ru.niceappsandgames.pokeradar-3)
+   - Map Radar For Pkmn Go (com.mapradarforpkmn-1.apk)
+   - Guide Pokemon GO Tips Tricks (com.bestgameguideandwalkthrough.pokemongo-2)
+   - Guide Poke Vision Radar GO Map (guide.poke.radar-1)
