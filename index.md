@@ -18,6 +18,8 @@ gives performance similar to well-written C/C++, while avoiding memory leaks, da
 giving memory safety. This programming language was selected to improve all the Java or Python based
 alternatives. It also gives us the ability to perform much more powerful checks faster.
 
+<div style="clear:both"></div>
+
 ## Usage
 
 To use SUPER you will need to configure in the `config.toml` file the paths of `vendor`,
