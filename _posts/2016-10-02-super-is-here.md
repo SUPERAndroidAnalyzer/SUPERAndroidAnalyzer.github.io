@@ -128,8 +128,9 @@ packages. This should change once [#22](https://github.com/SUPERAndroidAnalyzer/
 implemented.
 
 Once configured, the use is simple: Move the *.apk* file that you want to test to the `downloads`
-folder. The name of the *.apk* file should be `{package_name}.apk`. For example:
-`com.instagram.android.apk`. After that, running SUPER is as easy as running this:
+folder. If the folder does not exist, you will need to create it. The name of the *.apk* file
+should be `{package_name}.apk`. For example: `com.instagram.android.apk`. After that, running SUPER
+is as easy as running this:
 
 ```
 super {package_name}
