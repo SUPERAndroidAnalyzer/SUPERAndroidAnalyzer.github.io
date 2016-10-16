@@ -197,6 +197,8 @@ It's as simple as substracting *0x30* to each digit (in ASCII, *0x30* is `0` and
 order from *0x30* to *0x39*). Then, each digit is multiplied by its position in the decimal 3-digit
 number.
 
+## IDs lists
+
 [dalvik_wikipedia]: https://en.wikipedia.org/wiki/Dalvik_(software)
 [dex_format]: http://source.android.com/devices/tech/dalvik/dex-format.html
 [adler_32]: https://en.wikipedia.org/wiki/Adler-32
