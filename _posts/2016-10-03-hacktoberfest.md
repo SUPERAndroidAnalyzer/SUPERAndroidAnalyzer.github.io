@@ -12,8 +12,6 @@ tags: [new, contributing, hacktoberfest]
 developer can get a cool T-Shirt by contributing to open source projects. For that, developers only
 need to create four pull requests. And SUPER is one of the projects where you can contribute.
 
-{{ excerpt_separator }}
-
 <a href="https://hacktoberfest.digitalocean.com/" title="Hacktoberfest"><img src="https://hacktoberfest.digitalocean.com/assets/hf_logo-52c2c8901ebacc7c28dc212084389f4d950f89c3599db4e37cd9aa572ed096b3.svg" alt="Hacktoberfest logo" style="float:left;width:15em"></a>
 
 If you want to contribute to SUPER and get a great T-Shirt, it's as simple as fixing one of the
