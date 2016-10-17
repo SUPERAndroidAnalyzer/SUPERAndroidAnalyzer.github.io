@@ -199,10 +199,333 @@ number.
 
 ## IDs lists
 
+After the header, a *dex* file contains IDs sections. These are arrays of offsets or indexes to
+other lists, so they don't actually contain data. These sections are the following:
+
+  - **String IDs**: A list of `u32` offsets of strings strings. The number of IDs is defined in the
+    header, and they are ordered by contents. If the size of the list is 0, this section will not
+    exist. Those offsets point to a point in the data section, and they are given in bytes from the
+    beginning of the file (as all ofsets). The structure of that data will be discused in a future
+    post. To read the list is as simple as this:
+
+    ```rust
+    let mut string_ids = Vec::with_capacity(header.get_string_ids_size());
+    for _ in 0..header.get_string_ids_size() {
+        let offset = try!(if header.is_little_endian() {
+            reader.read_u32::<LittleEndian>()
+        } else {
+            reader.read_u32::<BigEndian>()
+        }) as usize;
+        string_ids.push((offset, None::<String>));
+    }
+    ```
+
+    It's really straightforward to do it, we only add a small optimization where we only allocate
+    once, since we already know the size of the list once we have read the header. We push the
+    offset of the string and the string in that offset. Since the offset will be in the data
+    section, we still don't have that information, so we use an optional type, which will be `None`
+    until we get the string.
+
+  - **Type IDs**: This is a list of string **indexes** (*not offsets*) for types. Those idexes are
+    a index in the *String IDs* list. So if we want to go to the data section with the string data
+    for the type, we will first need to get the index in the *String IDs* list and get the offset
+    saved at that index. Reading this list can be done the same way as the *String IDs* list, but
+    only with indexes:
+
+    ```rust
+    let mut type_ids = Vec::with_capacity(header.get_type_ids_size());
+    for _ in 0..header.get_type_ids_size() {
+        type_ids.push(try!(if header.is_little_endian() {
+            reader.read_u32::<LittleEndian>()
+        } else {
+            reader.read_u32::<BigEndian>()
+        }) as usize);
+    }
+    ```
+
+  - **Prototype IDs**: This is a list of method prototypes, ordered by return types indexes in the
+    *Type IDs* list, and then by arguments list. They have an index to the short string
+    description, an index to the type id for the return type and an offset to the parameters list,
+    if it has parameters. Here is how we read it:
+
+    ```rust
+    let mut prototype_ids = Vec::with_capacity(header.get_prototype_ids_size());
+    for _ in 0..header.get_prototype_ids_size() {
+        let shorty_id = try!(if header.is_little_endian() {
+            reader.read_u32::<LittleEndian>()
+        } else {
+            reader.read_u32::<BigEndian>()
+        });
+        let return_type_id = try!(if header.is_little_endian() {
+            reader.read_u32::<LittleEndian>()
+        } else {
+            reader.read_u32::<BigEndian>()
+        });
+        let parameters_offset = try!(if header.is_little_endian() {
+            reader.read_u32::<LittleEndian>()
+        } else {
+            reader.read_u32::<BigEndian>()
+        });
+        prototype_ids.push(PrototypeIdData::new(shorty_id,
+                                                return_type_id,
+                                                parameters_offset));
+    }
+    ```
+
+    Here, the `PrototypeIdData` will be a small type created for the ocasion:
+
+    ```rust
+    pub struct PrototypeIdData {
+        shorty_index: usize,
+        return_type_index: usize,
+        parameters_offset: Option<usize>,
+    }
+
+    impl PrototypeIdData {
+        pub fn new(shorty_index: u32,
+                   return_type_index: u32,
+                   parameters_offset: u32)
+                   -> PrototypeIdData {
+            PrototypeIdData {
+                shorty_index: shorty_index as usize,
+                return_type_index: return_type_index as usize,
+                parameters_offset: if parameters_offset != 0 {
+                    Some(parameters_offset as usize)
+                } else {
+                    None
+                },
+            }
+        }
+    }
+    ```
+
+    It will have some getters too, but are not shown for simplicity. Using a constructor, we divide
+    the logic of moving the data we read in the *dex* file and how we represent it in memory.
+
+  - **Field IDs**: This is the list of fields in classes, and is sorted by the type index of the
+    class, and with the string index of the name of the field. The field contains three parameters:
+    The class index in the *Type IDs* list, the type index of the field in the *Type IDs* list and
+    the the name of the field index in the *String IDs* list. We read it the same way as we do it
+    with prototype IDs:
+
+    ```rust
+    for _ in 0..header.get_field_ids_size() {
+        let class_id = try!(if header.is_little_endian() {
+            reader.read_u16::<LittleEndian>()
+        } else {
+            reader.read_u16::<BigEndian>()
+        });
+        let type_id = try!(if header.is_little_endian() {
+            reader.read_u16::<LittleEndian>()
+        } else {
+            reader.read_u16::<BigEndian>()
+        });
+        let name_id = try!(if header.is_little_endian() {
+            reader.read_u32::<LittleEndian>()
+        } else {
+            reader.read_u32::<BigEndian>()
+        });
+        field_ids.push(FieldIdData::new(class_id, type_id, name_id));
+    }
+    ```
+
+    As a curious thing, the first two indexes are `u16` integers, and that's why we couldn't have
+    more than 65,535 types. The `FieldIdData` struct would be the following:
+
+    ```rust
+    pub struct FieldIdData {
+        class_index: usize,
+        type_index: usize,
+        name_index: usize,
+    }
+
+    impl FieldIdData {
+        pub fn new(class_index: u16, type_index: u16, name_index: u32) -> FieldIdData {
+            FieldIdData {
+                class_index: class_index as usize,
+                type_index: type_index as usize,
+                name_index: name_index as usize,
+            }
+        }
+    }
+    ```
+
+  - **Method IDs**: This is the list of methods in classes, and it contains three fields: the index
+    of the type of the class in the *Type IDs* list, the index in the *Prototype IDs* list of the
+    prototype of the method, and the index of the name of the method in the *String IDs* list. It
+    has a special order that is not relevant for us (we are only reading *dex* files, not creating
+    them). To read it we use the same method as with field IDs but changing the type name to
+    `MethodIdData` for strong typing purposes.
+
+  - **Class definitions**: The list of classes in the *dex* file with their definitions. Each item
+    in the list is pretty big, with 12 attributes. We use the following (as we did before):
+
+    ```rust
+    for _ in 0..header.get_class_defs_size() {
+        let class_id = try!(if header.is_little_endian() {
+            reader.read_u32::<LittleEndian>()
+        } else {
+            reader.read_u32::<BigEndian>()
+        });
+        let access_flags = try!(if header.is_little_endian() {
+            reader.read_u32::<LittleEndian>()
+        } else {
+            reader.read_u32::<BigEndian>()
+        });
+        let superclass_id = try!(if header.is_little_endian() {
+            reader.read_u32::<LittleEndian>()
+        } else {
+            reader.read_u32::<BigEndian>()
+        });
+        let interfaces_offset = try!(if header.is_little_endian() {
+            reader.read_u32::<LittleEndian>()
+        } else {
+            reader.read_u32::<BigEndian>()
+        });
+        let source_file_id = try!(if header.is_little_endian() {
+            reader.read_u32::<LittleEndian>()
+        } else {
+            reader.read_u32::<BigEndian>()
+        });
+        let annotations_offset = try!(if header.is_little_endian() {
+            reader.read_u32::<LittleEndian>()
+        } else {
+            reader.read_u32::<BigEndian>()
+        });
+        let class_data_offset = try!(if header.is_little_endian() {
+            reader.read_u32::<LittleEndian>()
+        } else {
+            reader.read_u32::<BigEndian>()
+        });
+        let static_values_offset = try!(if header.is_little_endian() {
+            reader.read_u32::<LittleEndian>()
+        } else {
+            reader.read_u32::<BigEndian>()
+        });
+        class_defs.push(try!(ClassDefData::new(class_id,
+                                               access_flags,
+                                               superclass_id,
+                                               interfaces_offset,
+                                               source_file_id,
+                                               annotations_offset,
+                                               class_data_offset,
+                                               static_values_offset)));
+    }
+    ```
+
+    But here, we have an interesting situation with one of the fields: the access flags. Those flags
+    show if the class is public, abstract and a [ton of other flags][access-flags]. To represent
+    them we use the [bitflags][crate-bitflags] crate:
+
+    ```rust
+    bitflags! {
+        flags AccessFlags: u32 {
+            const ACC_PUBLIC = 0x1,
+            const ACC_PRIVATE = 0x2,
+            const ACC_PROTECTED = 0x4,
+            const ACC_STATIC = 0x8,
+            const ACC_FINAL = 0x10,
+            const ACC_SYNCHRONIZED = 0x20,
+            const ACC_VOLATILE = 0x40,
+            const ACC_BRIDGE = 0x40,
+            const ACC_TRANSIENT = 0x80,
+            const ACC_VARARGS = 0x80,
+            const ACC_NATIVE = 0x100,
+            const ACC_INTERFACE = 0x200,
+            const ACC_ABSTRACT = 0x400,
+            const ACC_STRICT = 0x800,
+            const ACC_SYNTHETIC = 0x1000,
+            const ACC_ANNOTATION = 0x2000,
+            const ACC_ENUM = 0x4000,
+            const ACC_CONSTRUCTOR = 0x10000,
+            const ACC_DECLARED_SYNCHRONIZED = 0x20000,
+        }
+    }
+    ```
+
+    After creating those flags, which will enable us to do some interesting math in the future, we
+    can use them to creating a class that represents the class definitions:
+
+    ```rust
+    pub struct ClassDefData {
+        class_id: usize,
+        access_flags: AccessFlags,
+        superclass_id: Option<usize>,
+        interfaces_offset: Option<usize>,
+        source_file_id: Option<usize>,
+        annotations_offset: Option<usize>,
+        class_data_offset: Option<usize>,
+        static_values_offset: Option<usize>,
+    }
+
+    impl ClassDefData {
+        pub fn new(class_id: u32,
+                   access_flags: u32,
+                   superclass_id: u32,
+                   interfaces_offset: u32,
+                   source_file_id: u32,
+                   annotations_offset: u32,
+                   class_data_offset: u32,
+                   static_values_offset: u32)
+                   -> Result<ClassDefData> {
+            Ok(ClassDefData {
+                class_id: class_id as usize,
+                access_flags: try!(AccessFlags::from_bits(access_flags)
+                    .ok_or(Error::invalid_access_flags(access_flags))),
+                superclass_id: if superclass_id != NO_INDEX {
+                    Some(superclass_id as usize)
+                } else {
+                    None
+                },
+                interfaces_offset: if interfaces_offset != 0 {
+                    Some(interfaces_offset as usize)
+                } else {
+                    None
+                },
+                source_file_id: if source_file_id != NO_INDEX {
+                    Some(source_file_id as usize)
+                } else {
+                    None
+                },
+                annotations_offset: if annotations_offset != 0 {
+                    Some(annotations_offset as usize)
+                } else {
+                    None
+                },
+                class_data_offset: if class_data_offset != 0 {
+                    Some(class_data_offset as usize)
+                } else {
+                    None
+                },
+                static_values_offset: if static_values_offset != 0 {
+                    Some(static_values_offset as usize)
+                } else {
+                    None
+                },
+            })
+        }
+    }
+    ```
+
+    After that, the IDs section will be correctly parsed and we will have some vectors with the
+    initial data of the *dex* file.
+
+## Conclusion and next steps
+
+Creating a *dex* file parser is not a one-day job, but as we have seen here, there is plenty of
+documentation available, even though, as we will see in the next post, it won't be enough. We will
+need to learn about unmapped data and the actual map section. We will need to parse a map and we
+will need to efficiently read the file storing the offsets in a special data structure to be able
+to fastly understand it sequencially.
+
+See you in the next post!
+
 [dalvik_wikipedia]: https://en.wikipedia.org/wiki/Dalvik_(software)
 [dex_format]: http://source.android.com/devices/tech/dalvik/dex-format.html
 [adler_32]: https://en.wikipedia.org/wiki/Adler-32
 [sha-1]: https://en.wikipedia.org/wiki/SHA-1
 [crate-byteorder]: https://crates.io/crates/byteorder
+[crate-bitflags]: https://crates.io/crates/bitflags
 [std-read]: https://doc.rust-lang.org/std/io/trait.Read.html
 [header-code]: https://github.com/SUPERAndroidAnalyzer/dalvik/blob/5bd058f84d417ace2d8f0e89e83f315691cfbf91/src/header.rs
+[access-flags]: http://source.android.com/devices/tech/dalvik/dex-format.html#access-flags
