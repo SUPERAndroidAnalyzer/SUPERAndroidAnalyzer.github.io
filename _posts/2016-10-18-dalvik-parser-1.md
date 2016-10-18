@@ -23,7 +23,7 @@ This first section of a *.dex* file contains information about the data inside o
 112 bytes length, and it **must** be the first section. The fields in this structure, in order, are
 the following:
 
-  - **Magic number**: Every *.dex* file starts with the string `dex\n037\0` in ASCII.the section
+  - **Magic number**: Every *.dex* file starts with the string `dex\n037\0` in ASCII. The section
     between the `\n` and the `\0` is the *dex* version. In this case, version `037`. We will focus
     in this version, since it's almost 100% compatible with version 35 and is available in all new
     Android versions. These are the first 8 bytes in the header.
