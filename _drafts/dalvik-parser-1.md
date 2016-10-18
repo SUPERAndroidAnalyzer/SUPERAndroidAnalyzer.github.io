@@ -226,7 +226,7 @@ other lists, so they don't actually contain data. These sections are the followi
     section, we still don't have that information, so we use an optional type, which will be `None`
     until we get the string.
 
-  - **Type IDs**: This is a list of string **indexes** (*not offsets*) for types. Those idexes are
+  - **Type IDs**: This is a list of string **indexes** (*not offsets*) for types. Those indexes are
     a index in the *String IDs* list. So if we want to go to the data section with the string data
     for the type, we will first need to get the index in the *String IDs* list and get the offset
     saved at that index. Reading this list can be done the same way as the *String IDs* list, but
