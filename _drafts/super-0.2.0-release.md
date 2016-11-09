@@ -71,6 +71,8 @@ contributors. We want to specially thank all the help we have received from the 
 contributions from **[@pocket7878][pocket7878]**, **[@VoltBit][VoltBit]**, **[@b52][b52]**,
 **[@nxnfufunezn][nxnfufunezn]** and **[@atk][atk]**.
 
+Complete changelog can be read [here][changelog];
+
 ## Templates
 [templates]: #templates
 
@@ -139,3 +141,4 @@ TODO: variables
 [nxnfufunezn]: https://github.com/nxnfufunezn
 [atk]: https://github.com/atk
 [handlebars]: http://handlebarsjs.com/
+[changelog]: https://github.com/SUPERAndroidAnalyzer/super/blob/0.2.0/CHANGELOG.md
