@@ -73,7 +73,7 @@ contributions from **[@pocket7878][pocket7878]**, **[@VoltBit][VoltBit]**, **[@b
 3,491 lines added and 1,974 lines deleted. It has been a real challenge that raises the total *LOC*
 of the project to 12,061.
 
-Complete changelog can be read [here][changelog];
+Complete changelog can be read [here][changelog].
 
 ## Templates
 [templates]: #templates
