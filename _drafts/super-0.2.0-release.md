@@ -66,10 +66,12 @@ In the report generation we have added vulnerable line highlighting, which makes
 issues, and we also improved some `exported` attributes searching, which, BTW,
 [still requires improvements][35].
 
-We have of course made a ton of under-the-hood improvements with a total of 101 changes from 7
+We have of course made a ton of under-the-hood improvements with a total of 101 commits from 7
 contributors. We want to specially thank all the help we have received from the community, with
 contributions from **[@pocket7878][pocket7878]**, **[@VoltBit][VoltBit]**, **[@b52][b52]**,
-**[@nxnfufunezn][nxnfufunezn]** and **[@atk][atk]**.
+**[@nxnfufunezn][nxnfufunezn]** and **[@atk][atk]**. This version has seen 95 changed files with
+3,491 lines added and 1,974 lines deleted. It has been a real challenge that raises the total *LOC*
+of the project to 12,061.
 
 Complete changelog can be read [here][changelog];
 
