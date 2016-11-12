@@ -29,33 +29,13 @@ alternatives. It also gives us the ability to perform much more powerful checks 
 
 ## Usage
 
-To use SUPER you will need to configure in the `config.toml` file the paths of `vendor`,
-`downloads` and other folders. If the package was installed using one of the provided packages,
-the default configuration will work. If not, probably the same folder where `super` is called from
-will work (usually the installation folder, or the current workspace). If willing to use other
-paths, a sample configuration file can be found in the `config.toml.sample` file.
-
-Lots of parameters can be configured in that file, such as the threads that will be used for the
-analysis or the rule file. We currently require some Java dependencies that are included in the
-packages. This should change once [#22](https://github.com/SUPERAndroidAnalyzer/super/issues/22) is
-implemented.
-
-Once configured, the use is simple: Move the *.apk* file that you want to test to the `downloads`
-folder. If the folder does not exist, you will need to create it. The name of the *.apk* file
-should be `{package_name}.apk`. For example: `com.instagram.android.apk`. After that, running SUPER
-is as easy as running this:
+Using SUPER is really simple:
 
 ```
-super {package_name}
+super {apk_file}
 ```
 
 If SUPER is installed in the current directory, in Unix, you will need to run `./super` instead.
-The package name will be the *.apk* file name without the extension. So in the example above, the
-command would be this:
-
-```
-super com.instagram.android
-```
 
 This will decompress all the files in the `dist/{package_name}` folder, analyze them with the rules
 in the `rules.json` file (and configuration in the `config.toml` file) and generate the results in
@@ -70,6 +50,17 @@ You can learn about more specific use cases by running:
 ```
 super --help
 ```
+
+You can also configure in the `config.toml` file the paths of `vendor`, `downloads` and other
+folders. If the package was installed using one of the provided packages, the default configuration
+will usually simply work. If not, probably the same folder where `super` is called from will work
+(usually the installation folder, or the current workspace). If willing to use other paths, a
+sample configuration file can be found in the `config.toml.sample` file.
+
+Lots of parameters can be configured in that file, such as the threads that will be used for the
+analysis or the rule file. We currently require some Java dependencies that are included in the
+packages. This should change once [#22](https://github.com/SUPERAndroidAnalyzer/super/issues/22) is
+implemented.
 
 ## Latest news
 
