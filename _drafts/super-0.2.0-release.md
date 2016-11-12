@@ -97,16 +97,19 @@ We have added some cool helpers to make the HTML code generation easier:
    defaults to `<br>`.
  - `all_code`: Renders the given code with an specific format for each line, and accepts an
    optional line separator that defaults to `<br>`:
+
    ```html
    <code id="code-line-{{ line_number }}">{{ line_indent }}<span class="line_body">{{ line_code }}</span></code>{{ line_separator }}
    ```
  - `html_code`: Renders the code for the given vulnerability. It also accepts a line separator as
    an optional second argument (again, it defaults to `<br>`). Each line is rendered as-is if it's
    not vulnerable, or with this format if it is:
+
    ```html
    <code class="vulnerable_line {{ criticality }}">{{ line_indent }}<span class="line_body">{{ line_code }}</span></code>{{ line_separator }}
    ```
    Where the criticity is one of *critical*, *high*, *medium*, *low* or *warning*.
+
  - `report_index`: Generates the index number for the given vulnerability. It requires a second
    argument that would be the index of the vulnerability (can be obtained with the `@index`
    variable in an `each` block), and the length of the list of this vulnerability criticality. For
@@ -115,6 +118,7 @@ We have added some cool helpers to make the HTML code generation easier:
    will explain next.
  - `generate_menu`: Generates the menu from the given menu object. It will generate an structure
    like this:
+
    ```html
    <ul>
        {{ for each file/folder }}
