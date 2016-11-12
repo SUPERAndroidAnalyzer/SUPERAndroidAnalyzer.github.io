@@ -66,12 +66,12 @@ In the report generation we have added vulnerable line highlighting, which makes
 issues, and we also improved some `exported` attributes searching, which, BTW,
 [still requires improvements][35].
 
-We have of course made a ton of under-the-hood improvements with a total of 101 commits from 7
+We have of course made a ton of under-the-hood improvements with a total of 106 commits from 7
 contributors. We want to specially thank all the help we have received from the community, with
 contributions from **[@pocket7878][pocket7878]**, **[@VoltBit][VoltBit]**, **[@b52][b52]**,
 **[@nxnfufunezn][nxnfufunezn]** and **[@atk][atk]**. This version has seen 95 changed files with
-3,491 lines added and 1,974 lines deleted. It has been a real challenge that raises the total *LOC*
-of the project to 12,061.
+3,506 lines added and 1,800 lines deleted. It has been a real challenge that raises the total *LOC*
+of the project to 12,070.
 
 Complete changelog can be read [here][changelog].
 
@@ -132,6 +132,7 @@ We have added some cool helpers to make the HTML code generation easier:
        <a href="{{ code_html_file }}" title="{{ file_name }}"><img src="../img/{{ file_type (xml/java) }}-icon.png">{{ file_name }}</a>
        {{endif}}
        <li>
+   </ul>
    ```
 
 There are also some variables available for each template. For the main `report.hbs` template, we
