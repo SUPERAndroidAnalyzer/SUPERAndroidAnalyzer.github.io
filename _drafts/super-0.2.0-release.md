@@ -12,7 +12,7 @@ second release, and it makes a big step forward in analysis report customization
 characteristic of this release is the new templating system, that will enable users total
 customization of reports. We will in fact [create a better template][25] for future releases. The
 templating system will be explained in the [templates][templates] section of this release
-announcement.
+announcement. As an extra, we made a MacOS X package so that you can easily install SUPER on Macs.
 
 But first, lets talk about the new CLI:
 
@@ -130,10 +130,48 @@ We have added some cool helpers to make the HTML code generation easier:
        <li>
    ```
 
-TODO: variables
+There are also some variables available for each template. For the main `report.hbs` template, we
+have added the following variables:
 
+ - `super_version`: Version of the SUPER application (in this case *0.2.0*).
+ - `now`: Object representation of the report generation time. (Chech [`chrono`][crono-datetime]
+   documentation).
+ - `now_rfc2822`: RFC 2822 date and time representation, something like
+   `Tue, 1 Jul 2003 10:52:37 +0200`.
+ - `now_rfc3339`: RFC 3339 date and time representation, something like `1996-12-19T16:39:57-08:00`.
+ - `app_package`: The package name of the application (such as `jakhar.aseem.diva`).
+ - `app_version`: The application version as string (could be anything the application shows to the
+   user).
+ - `app_version_number`: The application version number. ([More info][version-number]).
+ - `app_fingerprint`: The fingerprint of the application. It has three fields, `md5`, with the Md5
+   hash of the *.apk* file, `sha1` with the SHA-1 hash and `sha256` with the SHA-256 hash.
+ - `certificate`: Information about the certificate of the application, **currently empty**.
+ - `app_min_sdk`: Minimum SDK number of the application.
+ - `app_target_sdk`: Target SDK number of the application.
+ - `total_vulnerabilities`: The total number of potential vulnerabilities.
+ - `criticals`: The list of critical vulnerabilities.
+ - `criticals_len`: The number of critical vulnerabilities.
+ - `highs`: The list of high criticality vulnerabilities.
+ - `highs_len`: The number of high criticality vulnerabilities.
+ - `mediums`: The list of medium criticality vulnerabilities.
+ - `mediums_len`: The number of medium criticality vulnerabilities.
+ - `lows`: The list of low criticality vulnerabilities.
+ - `lows_len`: The number of low criticality vulnerabilities.
+ - `warnings`: The list of warnings.
+ - `warnings_len`: The number of warnings.
 
+For the `src.hbs` template:
 
+ - `menu`: The menu object to use to generate the source tree menu.
+
+For the `code.hbs` template:
+
+ - `path`: The path of the code file.
+ - `code`: The actual code of the file.
+ - `back_path`: A series of `../` that reference the root of the report (where the `index.html`
+   file will be).
+
+You can download the package for your distribution at the [downloads page]({{ site.url }}/download.html).
 
 [25]: https://github.com/SUPERAndroidAnalyzer/super/issues/25
 [35]: https://github.com/SUPERAndroidAnalyzer/super/issues/35
@@ -144,3 +182,5 @@ TODO: variables
 [atk]: https://github.com/atk
 [handlebars]: http://handlebarsjs.com/
 [changelog]: https://github.com/SUPERAndroidAnalyzer/super/blob/0.2.0/CHANGELOG.md
+[chrono-datetime]: https://lifthrasiir.github.io/rust-chrono/chrono/datetime/struct.DateTime.html
+[version-number]: https://developer.android.com/studio/publish/versioning.html#appversioning
