@@ -29,11 +29,13 @@ suggestions or even command completions. This works for Bash, Fish and ZSH.
 You can check the rest of the changes in the [changelog][changelog] of the project. This release
 also start a new release cycle in SUPER. Until now, we were trying to release new versions every 6
 weeks. As you can see in this version, that is no longer possible, and it effectively limits our
-options to create big features (such as [removing Java dependencies][22]). That's why we have moved to a
-"when ready" release cycle. We will now continue working in our spare time, and when we feel that a
-new version should be released, we will do so. So, don't expect the 0.4.0 version in March!
+options to create big features (such as [removing Java dependencies][22]). That's why we have moved
+to a "when ready" release cycle. We will now continue working in our spare time, and when we feel
+that a new version should be released, we will do so. So, don't expect the 0.4.0 version in March!
 
-As always, you can download the package for your distribution at the
+We want to give special thanks to [@gnieto][gnieto] for his contributions to this release. As
+always, you can download the package for your distribution at the
 [downloads page]({{ site.url }}/download.html).
 
 [22]: https://github.com/SUPERAndroidAnalyzer/super/issues/22
+[gnieto]: https://github.com/gnieto
