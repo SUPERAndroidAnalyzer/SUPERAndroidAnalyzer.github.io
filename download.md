@@ -12,7 +12,7 @@ only provide 64-bit builds. If you need support for 32 bits, you will need to
 Windows download has been tested in Windows 8.1 and Windows 10, but it might work in other versions
 as well.
 
-<div class="download" style="margin-left:15em;width:10em;height:5em"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.3.0/super-0.3.0-windows-x86_64.exe" title="Download SUPER for Windows"><img src="{{ site.url }}/assets/os_logos/windows.svg" alt="Windows logo"><br>Windows 8.1+ (64-bit)</a></div>
+<div class="download" style="margin-left:15em;width:10em;height:5em"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.3.1/super-analyzer-0.3.1-windows-x86_64.exe" title="Download SUPER for Windows"><img src="{{ site.url }}/assets/os_logos/windows.svg" alt="Windows logo"><br>Windows 8.1+ (64-bit)</a></div>
 
 <div style="clear:both;"></div>
 
@@ -33,7 +33,7 @@ well, or even in other distributions.
 
 ## Download for MacOS X
 
-<div class="download" style="margin-left:15em;width:10em;height:5em"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.3.0/super_0.3.0_macosx-x86_64.pkg" title="Download SUPER for MacOS X"><img src="{{ site.url }}/assets/os_logos/macos.svg" alt="Apple logo"><br>MacOS X (64-bit)</a></div>
+<div class="download" style="margin-left:15em;width:10em;height:5em"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.3.1/super-analyzer_0.3.1_macosx_x86_64.pkg" title="Download SUPER for MacOS X"><img src="{{ site.url }}/assets/os_logos/macos.svg" alt="Apple logo"><br>MacOS X (64-bit)</a></div>
 
 <div style="clear:both;"></div>
 
