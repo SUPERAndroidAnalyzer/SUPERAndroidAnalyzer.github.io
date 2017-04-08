@@ -103,4 +103,5 @@ selected us to be added to the distribution main repositories.
 [dalvik]: https://github.com/SUPERAndroidAnalyzer/dalvik
 [codecov]: https://codecov.io/gh/SUPERAndroidAnalyzer/super
 [gh_gnieto]: https://github.com/gnieto
+[abxml]: https://github.com/gnieto/abxml-rs
 [a_tamer]: https://androidtamer.com/
