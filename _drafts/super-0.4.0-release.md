@@ -109,4 +109,4 @@ can download the package for your distribution at the
 [gh_gnieto]: https://github.com/gnieto
 [abxml]: https://github.com/gnieto/abxml-rs
 [a_tamer]: https://androidtamer.com/
-[changelog]: [changelog]: https://github.com/SUPERAndroidAnalyzer/super/blob/0.4.0/CHANGELOG.md
+[changelog]: https://github.com/SUPERAndroidAnalyzer/super/blob/0.4.0/CHANGELOG.md
