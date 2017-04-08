@@ -100,8 +100,13 @@ operating system in their own repositories.
 This Linux distribution gives tools to work with Android pentesting, and we are glad that they
 selected us to be added to the distribution main repositories.
 
+You can check the rest of the changes in the [changelog][changelog] of the project. As always, you
+can download the package for your distribution at the
+[downloads page]({{ site.url }}/download.html).
+
 [dalvik]: https://github.com/SUPERAndroidAnalyzer/dalvik
 [codecov]: https://codecov.io/gh/SUPERAndroidAnalyzer/super
 [gh_gnieto]: https://github.com/gnieto
 [abxml]: https://github.com/gnieto/abxml-rs
 [a_tamer]: https://androidtamer.com/
+[changelog]: [changelog]: https://github.com/SUPERAndroidAnalyzer/super/blob/0.4.0/CHANGELOG.md
