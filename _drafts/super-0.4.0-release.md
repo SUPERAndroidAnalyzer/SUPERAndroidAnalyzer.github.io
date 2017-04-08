@@ -66,9 +66,9 @@ generated was fixed. Now, when you use the `--open` flag with the `--json` flag,
 the JSON report if there is a program associated with `.json` file extension. If `--html` flag is
 provided, or no `--json` flag is present, it will open the HTML report.
 
-`--force` flag is now less aggresive. It won't remove a JSON report if only the HTML report is being
-generated, and the othey way around: it won't remove the HTML report if only the JSON report is
-being generated.
+The `--force` flag is now less aggressive. It won't remove a JSON report if only the HTML report is
+being generated, and the othey way around: it won't remove the HTML report if only the JSON report
+is being generated.
 
 ## Development notes
 
