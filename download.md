@@ -23,7 +23,7 @@ well, or even in other distributions.
 
 <div class="download" style="margin-left:0"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.4.0/super-analyzer_0.4.0_debian_amd64.deb" title="Download SUPER for Debian"><img src="{{ site.url }}/assets/os_logos/debian.svg" alt="Debian logo"><br>Debian 8.7<br>(64-bit)</a></div>
 
-<div class="download"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.4.1/super-analyzer_0.4.1_ubuntu_amd64.deb" title="Download SUPER for Ubuntu"><img src="{{ site.url }}/assets/os_logos/ubuntu.svg" alt="Ubuntu logo"><br>Ubuntu 16.04<br>(64-bit)</a></div>
+<div class="download"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.4.0/super-analyzer_0.4.0_ubuntu_amd64.deb" title="Download SUPER for Ubuntu"><img src="{{ site.url }}/assets/os_logos/ubuntu.svg" alt="Ubuntu logo"><br>Ubuntu 16.04<br>(64-bit)</a></div>
 
 <div class="download"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.4.0/super-analyzer-0.4.0-1.el7.centos.x86_64.rpm" title="Download SUPER for CentOS"><img src="{{ site.url }}/assets/os_logos/centos.svg" alt="CentOS logo"><br>CentOS 7<br>(64-bit)</a></div>
 
