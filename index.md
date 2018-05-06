@@ -4,7 +4,7 @@ title: SUPER Android Analyzer
 ---
 {% include JB/setup %}
 
-<img src="{{ site.url }}/assets/logo.png" alt="SUPER logo" title="SUPER Android Analyzer" style="float:left;width:15em;margin:1em">
+<img src="{{ site.production_url }}/assets/logo.png" alt="SUPER logo" title="SUPER Android Analyzer" style="float:left;width:15em;margin:1em">
 
 *Secure, Unified, Powerful and Extensible Rust Android Analyzer*
 
