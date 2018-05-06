@@ -60,10 +60,10 @@ We currently depend on OpenSSL and Java, which are not installed in Windows by d
 Windows users need to download and install OpenSSL and Java and add it to the `PATH` variable of
 the system:
 
-  - You can download OpenSSL [here](http://gnuwin32.sourceforge.net/packages/openssl.htm).
+  - You can download OpenSSL [here](https://gnuwin32.sourceforge.net/packages/openssl.htm).
   - To add it to the PATH, go to *Control panel > System > Environment variables > PATH* and add
     an entry to OpenSSL (it should be something like this: `C:\Program Files (x86)\GnuWin32\bin`).
-  - Do the same for Java, which can be downloaded [here](http://www.java.com/en/download/).
+  - Do the same for Java, which can be downloaded [here](https://www.java.com/en/download/).
 
 It's very easy to run SUPER in Windows. We provide an executable which extracts SUPER to the
 specified folder so users don't need to configure anything else. To run SUPER, double click in the
@@ -222,7 +222,7 @@ dependencies.
 
 SUPER has been developed in [GitHub](https://github.com/SUPERAndroidAnalyzer/super) as an open
 source software. It's licenses under GPLv3 (or, at your option, any later version). We use
-[Git-flow](http://nvie.com/posts/a-successful-git-branching-model/) as our development model and we
+[Git-flow](https://nvie.com/posts/a-successful-git-branching-model/) as our development model and we
 have created some
 [guidelines](https://github.com/SUPERAndroidAnalyzer/super/blob/master/contributing.md) to
 contribute. It has been developed by the

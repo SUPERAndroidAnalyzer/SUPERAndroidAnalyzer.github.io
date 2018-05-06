@@ -547,11 +547,11 @@ to fastly understand it sequencially.
 See you in the next post!
 
 [dalvik_wikipedia]: https://en.wikipedia.org/wiki/Dalvik_(software)
-[dex_format]: http://source.android.com/devices/tech/dalvik/dex-format.html
+[dex_format]: https://source.android.com/devices/tech/dalvik/dex-format.html
 [adler_32]: https://en.wikipedia.org/wiki/Adler-32
 [sha-1]: https://en.wikipedia.org/wiki/SHA-1
 [crate-byteorder]: https://crates.io/crates/byteorder
 [crate-bitflags]: https://crates.io/crates/bitflags
 [std-read]: https://doc.rust-lang.org/std/io/trait.Read.html
 [header-code]: https://github.com/SUPERAndroidAnalyzer/dalvik/blob/5bd058f84d417ace2d8f0e89e83f315691cfbf91/src/header.rs
-[access-flags]: http://source.android.com/devices/tech/dalvik/dex-format.html#access-flags
+[access-flags]: https://source.android.com/devices/tech/dalvik/dex-format.html#access-flags
