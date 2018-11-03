@@ -25,7 +25,7 @@ well, or even in other distributions.
 
 <div class="download"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.0/super-analyzer_0.5.0_ubuntu_amd64.deb" title="Download SUPER for Ubuntu"><img src="{{ site.url }}/assets/os_logos/ubuntu.svg" alt="Ubuntu logo"><br>Ubuntu 18.04<br>(64-bit)</a></div>
 
-<div class="download"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.0/super-analyzer-0.5.0-1.el7.centos.x86_64.rpm" title="Download SUPER for CentOS"><img src="{{ site.url }}/assets/os_logos/centos.svg" alt="CentOS logo"><br>CentOS 7.5<br>(64-bit)</a></div>
+<div class="download"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.0/super-analyzer-0.5.0-1.el7.x86_64.rpm" title="Download SUPER for CentOS"><img src="{{ site.url }}/assets/os_logos/centos.svg" alt="CentOS logo"><br>CentOS 7.5<br>(64-bit)</a></div>
 
 <div class="download"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.0/super-analyzer-0.5.0-1.fc28.x86_64.rpm" title="Download SUPER for Fedora"><img src="{{ site.url }}/assets/os_logos/fedora.svg" alt="Fedora logo"><br>Fedora 28<br>(64-bit)</a></div>
 
