@@ -12,7 +12,7 @@ only provide 64-bit builds. If you need support for 32 bits, you will need to
 Windows download has been tested in Windows 8.1 and Windows 10, but it might work in other versions
 as well.
 
-<div class="download" style="margin-left:15em;width:10em;height:5em"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.4.1/super-analyzer-0.4.1-windows-x86_64.exe" title="Download SUPER for Windows"><img src="{{ site.url }}/assets/os_logos/windows.svg" alt="Windows logo"><br>Windows 8.1+ (64-bit)</a></div>
+<div class="download" style="margin-left:15em;width:10em;height:5em"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.0/super-analyzer-0.5.0-windows-x86_64.exe" title="Download SUPER for Windows"><img src="{{ site.url }}/assets/os_logos/windows.svg" alt="Windows logo"><br>Windows 8.1+ (64-bit)</a></div>
 
 <div style="clear:both;"></div>
 
