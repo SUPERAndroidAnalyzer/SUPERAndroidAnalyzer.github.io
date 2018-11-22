@@ -60,3 +60,10 @@ cargo build --release
 
 This will create `target/release/super`, which will be the executable that you will be able to
 [use]({{ site.production_url }}#usage).
+
+Note that if you are compiling SUPER in Windows, you will need to add an extra flag to the compiler
+to avoid strange characters in the shell. To compile SUPER in Windows, use this command:
+
+```
+cargo build --release --features no-color
+```
