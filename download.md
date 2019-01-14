@@ -12,7 +12,7 @@ only provide 64-bit builds. If you need support for 32 bits, you will need to
 Windows download has been tested in Windows 8.1 and Windows 10, but it might work in other versions
 as well.
 
-<div class="download" style="margin-left:15em;width:10em;height:5em"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.0/super-analyzer-0.5.0-windows-x86_64.exe" title="Download SUPER for Windows"><img src="{{ site.url }}/assets/os_logos/windows.svg" alt="Windows logo"><br>Windows 8.1+ (64-bit)</a></div>
+<div class="download" style="margin-left:15em;width:10em;height:5em"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.1/super-analyzer-0.5.1-windows-x86_64.exe" title="Download SUPER for Windows"><img src="{{ site.url }}/assets/os_logos/windows.svg" alt="Windows logo"><br>Windows 8.1+ (64-bit)</a></div>
 
 <div style="clear:both;"></div>
 
@@ -21,28 +21,28 @@ as well.
 Linux downloads have been tested in the given OS versions, but they might work in other versions as
 well, or even in other distributions.
 
-<div class="download" style="margin-left:0"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.0/super-analyzer_0.5.0_debian_amd64.deb" title="Download SUPER for Debian"><img src="{{ site.url }}/assets/os_logos/debian.svg" alt="Debian logo"><br>Debian 9.5<br>(64-bit)</a></div>
+<div class="download" style="margin-left:0"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.1/super-analyzer_0.5.1_debian_amd64.deb" title="Download SUPER for Debian"><img src="{{ site.url }}/assets/os_logos/debian.svg" alt="Debian logo"><br>Debian 9.5<br>(64-bit)</a></div>
 
-<div class="download"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.0/super-analyzer_0.5.0_ubuntu_amd64.deb" title="Download SUPER for Ubuntu"><img src="{{ site.url }}/assets/os_logos/ubuntu.svg" alt="Ubuntu logo"><br>Ubuntu 18.04<br>(64-bit)</a></div>
+<div class="download"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.1/super-analyzer_0.5.1_ubuntu_amd64.deb" title="Download SUPER for Ubuntu"><img src="{{ site.url }}/assets/os_logos/ubuntu.svg" alt="Ubuntu logo"><br>Ubuntu 18.04<br>(64-bit)</a></div>
 
-<div class="download"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.0/super-analyzer-0.5.0-1.el7.x86_64.rpm" title="Download SUPER for CentOS"><img src="{{ site.url }}/assets/os_logos/centos.svg" alt="CentOS logo"><br>CentOS 7.5<br>(64-bit)</a></div>
+<div class="download"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.1/super-analyzer-0.5.1-1.el7.x86_64.rpm" title="Download SUPER for CentOS"><img src="{{ site.url }}/assets/os_logos/centos.svg" alt="CentOS logo"><br>CentOS 7.5<br>(64-bit)</a></div>
 
-<div class="download"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.0/super-analyzer-0.5.0-1.fc28.x86_64.rpm" title="Download SUPER for Fedora"><img src="{{ site.url }}/assets/os_logos/fedora.svg" alt="Fedora logo"><br>Fedora 28<br>(64-bit)</a></div>
+<div class="download"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.1/super-analyzer-0.5.1-1.fc28.x86_64.rpm" title="Download SUPER for Fedora"><img src="{{ site.url }}/assets/os_logos/fedora.svg" alt="Fedora logo"><br>Fedora 28<br>(64-bit)</a></div>
 
 <div style="clear:both;"></div>
 
 ## Download for MacOS X
 
-<div class="download" style="margin-left:15em;width:10em;height:5em"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.0/super-analyzer_0.5.0_macosx_x86_64.pkg" title="Download SUPER for MacOS X"><img src="{{ site.url }}/assets/os_logos/macos.svg" alt="Apple logo"><br>MacOS X (64-bit)</a></div>
+<div class="download" style="margin-left:15em;width:10em;height:5em"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.1/super-analyzer_0.5.1_macosx_x86_64.pkg" title="Download SUPER for MacOS X"><img src="{{ site.url }}/assets/os_logos/macos.svg" alt="Apple logo"><br>MacOS X (64-bit)</a></div>
 
 <div style="clear:both;"></div>
 
 ## Compile from source
 
 In the case that you want or need to compile SUPER from its sources, you will need to download
-those sources first. You can download SUPER 0.5.0 sources in
-[zip](https://github.com/SUPERAndroidAnalyzer/super/archive/0.5.0.zip) or in
-[tar.gz](https://github.com/SUPERAndroidAnalyzer/super/archive/0.5.0.tar.gz). You can also clone
+those sources first. You can download SUPER 0.5.1 sources in
+[zip](https://github.com/SUPERAndroidAnalyzer/super/archive/0.5.1.zip) or in
+[tar.gz](https://github.com/SUPERAndroidAnalyzer/super/archive/0.5.1.tar.gz). You can also clone
 the *Git* repository by running:
 
 ```
