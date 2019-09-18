@@ -21,13 +21,13 @@ as well.
 Linux downloads have been tested in the given OS versions, but they might work in other versions as
 well, or even in other distributions.
 
-<div class="download" style="margin-left:0"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.1/super-analyzer_0.5.1_debian_amd64.deb" title="Download SUPER for Debian"><img src="{{ site.url }}/assets/os_logos/debian.svg" alt="Debian logo"><br>Debian 9.5<br>(64-bit)</a></div>
+<div class="download" style="margin-left:0"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.1/super-analyzer_0.5.1_debian_amd64.deb" title="Download SUPER for Debian"><img src="{{ site.url }}/assets/os_logos/debian.svg" alt="Debian logo"><br>Debian 9<br>(64-bit)</a></div>
 
 <div class="download"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.1/super-analyzer_0.5.1_ubuntu_amd64.deb" title="Download SUPER for Ubuntu"><img src="{{ site.url }}/assets/os_logos/ubuntu.svg" alt="Ubuntu logo"><br>Ubuntu 18.04<br>(64-bit)</a></div>
 
-<div class="download"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.1/super-analyzer-0.5.1-1.el7.x86_64.rpm" title="Download SUPER for CentOS"><img src="{{ site.url }}/assets/os_logos/centos.svg" alt="CentOS logo"><br>CentOS 7.5<br>(64-bit)</a></div>
+<div class="download"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.1/super-analyzer-0.5.1-1.el7.x86_64.rpm" title="Download SUPER for CentOS"><img src="{{ site.url }}/assets/os_logos/centos.svg" alt="CentOS logo"><br>CentOS 7<br>(64-bit)</a></div>
 
-<div class="download"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.1/super-analyzer-0.5.1-1.fc28.x86_64.rpm" title="Download SUPER for Fedora"><img src="{{ site.url }}/assets/os_logos/fedora.svg" alt="Fedora logo"><br>Fedora 28<br>(64-bit)</a></div>
+<div class="download"><a href="https://github.com/SUPERAndroidAnalyzer/super/releases/download/0.5.1/super-analyzer-0.5.1-1.fc29.x86_64.rpm" title="Download SUPER for Fedora"><img src="{{ site.url }}/assets/os_logos/fedora.svg" alt="Fedora logo"><br>Fedora 29<br>(64-bit)</a></div>
 
 <div style="clear:both;"></div>
 
