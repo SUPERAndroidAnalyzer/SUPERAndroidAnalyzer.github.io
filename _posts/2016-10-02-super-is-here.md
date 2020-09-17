@@ -160,7 +160,7 @@ If you run `super --help`, you will see the following:
 
 ```
 SUPER Android Analyzer 0.1.0
-SUPER Android Analyzer Team <contact@superanalyzer.rocks>
+SUPER Android Analyzer Team <superanalyzer@pm.me>
 Audits Android apps for vulnerabilities
 
 USAGE:
